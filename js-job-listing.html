@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Listings - Job Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="js-job-listing.css" />
+    <script src="js-job-listing.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="#" alt="" />
+          <span>Job Finder</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="job-seeker-dashboard.html">Dashboard</a></li>
+          <li><a href="js-my-profile.html">My Profile</a></li>
+          <li><a href="js-job-listing.html" class="active">Job Listing</a></li>
+          <li><a href="js-saved-jobs.html">Saved Jobs</a></li>
+          <li><a href="js-applied-jobs.html">Applied Jobs</a></li>
+          <li>
+            <a href="index.html" onclick="localStorage.removeItem('userInfo')"
+              >Log Out</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1>Job Listings</h1>
+      <p class="page-description">Find the perfect job opportunity for you</p>
+
+      <div class="filter-container">
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Job title or keyword" />
+          <button onclick="searchJobs()">Search</button>
+        </div>
+
+        <div class="filters">
+          <select id="locationFilter" onchange="filterJobs()">
+            <option value="all">All Locations</option>
+            <option value="pune">Pune</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="bangalore">Bangalore</option>
+            <option value="delhi">Delhi</option>
+          </select>
+
+          <select id="jobTypeFilter" onchange="filterJobs()">
+            <option value="all">All Job Types</option>
+            <option value="full-time">Full-time</option>
+            <option value="part-time">Part-time</option>
+            <option value="contract">Contract</option>
+            <option value="internship">Internship</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="loadingJobs" class="loading-message">Loading jobs...</div>
+
+      <div class="job-list" id="jobList">
+        <!-- Jobs will be loaded dynamically -->
+      </div>
+
+      <div id="noJobsMessage" class="no-jobs-message" style="display: none">
+        <p>No jobs found matching your criteria.</p>
+        <button onclick="resetFilters()" class="browse-btn">
+          Reset Filters
+        </button>
+      </div>
+    </main>
+    <script src="mobile-nav.js"></script>
+  </body>
+</html>

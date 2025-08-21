@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recruiter Dashboard - Job Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="recruiter-dashboard.css" />
+    <script src="recruiter-dashboard.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="#" alt="" />
+          <span>Job Finder</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#" class="active">Dashboard</a></li>
+          <li><a href="post-job.html">Post Job</a></li>
+          <li><a href="manage-jobs.html">Manage Jobs</a></li>
+          <li><a href="view-applications.html">Applications</a></li>
+          <li><a href="recruiter-profile.html">My Profile</a></li>
+          <li>
+            <a href="index.html" onclick="localStorage.removeItem('userInfo')"
+              >Log Out</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="dashboard-container">
+      <h1>Recruiter Dashboard</h1>
+      <p class="welcome-text">
+        Welcome back, <span id="recruiterName">Recruiter</span>! Manage your job
+        postings and applications here.
+      </p>
+
+      <div class="stats-container">
+        <div class="stat-box">
+          <h3 id="activeJobsCount">0</h3>
+          <p>Active Jobs</p>
+        </div>
+        <div class="stat-box">
+          <h3 id="totalApplicationsCount">0</h3>
+          <p>Total Applications</p>
+        </div>
+        <div class="stat-box">
+          <h3 id="newApplicationsCount">0</h3>
+          <p>New Applications</p>
+        </div>
+      </div>
+
+      <section class="dashboard-section">
+        <h2>Quick Actions</h2>
+        <div class="action-buttons">
+          <a href="post-job.html" class="action-btn">Post New Job</a>
+          <a href="manage-jobs.html" class="action-btn">Manage Jobs</a>
+          <a href="view-applications.html" class="action-btn"
+            >View Applications</a
+          >
+        </div>
+      </section>
+
+      <section class="dashboard-section">
+        <h2>Recent Job Postings</h2>
+        <div class="job-list">
+          <!-- Job listings will be loaded dynamically -->
+          <div class="loading">Loading recent job postings...</div>
+        </div>
+      </section>
+    </main>
+    <script src="mobile-nav.js"></script>
+  </body>
+</html>

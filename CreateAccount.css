@@ -1,0 +1,130 @@
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  height: 100vh;
+}
+
+.contact-content {
+  flex: 1;
+  margin-right: 10rem;
+  margin-left: 5%;
+  text-align: left;
+  max-width: 400px;
+}
+
+.contact-image {
+  flex: 1;
+  margin-right: 5rem;
+}
+
+.contact-content h1 {
+  color: #0539a8;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+}
+
+.contact-content label {
+  margin-bottom: 0.5rem;
+}
+
+.contact-content input {
+  margin-bottom: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.contact-content select {
+  margin-bottom: 1rem; /* Ensure spacing below the drop-down */
+  padding: 10px; /* Match padding with input fields */
+  border: 1px solid #ccc; /* Match border with input fields */
+  border-radius: 5px; /* Match border radius with input fields */
+  width: 100%; /* Ensure it takes full width */
+}
+
+.btn.primary {
+  margin-top: 2rem; /* Increase space above the button */
+}
+
+
+.btn.primary {
+  background-color: #0539a8;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+}
+
+.btn.primary:hover {
+  background-color: #042a6d;
+}
+
+.account-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    height: auto;
+    min-height: calc(100vh - 80px);
+  }
+
+  .contact-content {
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 2rem;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact-image {
+    margin-right: 0;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .contact-content h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 0.5rem;
+  }
+
+  .contact-content {
+    padding: 0 1rem;
+  }
+
+  .contact-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-content input,
+  .contact-content select {
+    padding: 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .btn.primary {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}

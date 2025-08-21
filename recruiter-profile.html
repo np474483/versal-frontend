@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recruiter Profile - Job Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="recruiter-profile.css" />
+    <script src="recruiter-profile.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="#" alt="" />
+          <span>Job Finder</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="recruiter-dashboard.html">Dashboard</a></li>
+          <li><a href="post-job.html">Post Job</a></li>
+          <li><a href="manage-jobs.html">Manage Jobs</a></li>
+          <li><a href="view-applications.html">Applications</a></li>
+          <li>
+            <a href="recruiter-profile.html" class="active">My Profile</a>
+          </li>
+          <li>
+            <a href="index.html" onclick="localStorage.removeItem('userInfo')"
+              >Log Out</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1>Company Profile</h1>
+      <p class="page-description">Manage your company information</p>
+
+      <div class="profile-section">
+        <h2>Company Information</h2>
+        <form id="companyForm" onsubmit="return updateCompanyInfo()">
+          <div class="form-group">
+            <label for="companyName">Company Name*</label>
+            <input type="text" id="companyName" name="companyName" required />
+          </div>
+
+          <div class="form-group">
+            <label for="industry">Industry*</label>
+            <input type="text" id="industry" name="industry" required />
+          </div>
+
+          <div class="form-group">
+            <label for="companyEmail">Email*</label>
+            <input
+              type="email"
+              id="companyEmail"
+              name="companyEmail"
+              required />
+          </div>
+
+          <div class="form-group">
+            <label for="companyPhone">Phone*</label>
+            <input type="tel" id="companyPhone" name="companyPhone" required />
+          </div>
+
+          <div class="form-group">
+            <label for="companyLocation">Location*</label>
+            <input
+              type="text"
+              id="companyLocation"
+              name="companyLocation"
+              required />
+          </div>
+
+          <div class="form-group">
+            <label for="companyDescription">Company Description*</label>
+            <textarea
+              id="companyDescription"
+              name="companyDescription"
+              rows="5"
+              required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="companyWebsite">Website</label>
+            <input type="url" id="companyWebsite" name="companyWebsite" />
+          </div>
+
+          <div class="form-group">
+            <label for="companyLogo">Company Logo</label>
+            <div class="logo-upload-container">
+              <img
+                id="companyLogoPreview"
+                src="/images/company-placeholder.png"
+                alt="Company Logo" />
+              <button type="button" id="uploadLogoBtn" class="upload-btn">
+                Upload Logo
+              </button>
+              <input
+                type="file"
+                id="logoInput"
+                accept="image/*"
+                style="display: none" />
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="save-btn">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script src="mobile-nav.js"></script>
+  </body>
+</html>

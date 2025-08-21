@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Finder - Your Gateway to Opportunities</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="index.js" defer></script>
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="#" alt="" />
+          <span>Job Finder</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <div class="hero-content">
+        <h2>Job Finder</h2>
+        <h1>Find The Perfect Job That You Deserved!</h1>
+        <p>Find Your Career To Make A Better Life.</p>
+        <div class="cta-buttons">
+          <a href="SignIn.html"><button class="btn primary">Login</button></a>
+          <a href="CreateAccount.html"
+            ><button class="btn secondary">Create Account</button></a
+          >
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/home.jpg" />
+      </div>
+    </main>
+
+    <div class="Recent-post">
+      <section class="jobs-section">
+        <div class="section-header">
+          <h2>Recent Jobs Available</h2>
+          <a href="SignIn.html" class="view-all">View all</a>
+        </div>
+        <!-- Job Listings -->
+        <div class="job-listings" id="recentJobsContainer">
+          <!-- Loading placeholder -->
+          <div class="loading-jobs">
+            <p>Loading recent jobs...</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="mobile-nav.js"></script>
+  </body>
+</html>

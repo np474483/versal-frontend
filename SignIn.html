@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In - Job Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="SignIn.css" />
+    <script src="SignIn.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="#" alt="" />
+          <span>Job Finder</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="SignIn.html" class="active">Sign In</a></li>
+          <li><a href="CreateAccount.html">Create Account</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="signin">
+      <div class="signin-content">
+        <h1>Sign In</h1>
+        <form action="/login" method="post" onsubmit="return validateSignInForm()">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+          <button type="submit" class="btn primary">Sign In</button>
+        </form>
+        <p>
+          Don't have an account? <a href="CreateAccount.html">Create Account</a>
+        </p>
+      </div>
+      <div class="signin-image">
+        <img src="images/signin.jpg" alt="Sign In" class="signin-image" />
+      </div>
+    </div>
+    <script src="mobile-nav.js"></script>
+  </body>
+</html>

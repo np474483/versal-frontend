@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Applied Jobs - Job Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="js-applied-jobs.css" />
+    <link rel="stylesheet" href="modal.css" />
+    <script src="js-applied-jobs.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="#" alt="" />
+          <span>Job Finder</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="job-seeker-dashboard.html">Dashboard</a></li>
+          <li><a href="js-my-profile.html">My Profile</a></li>
+          <li><a href="js-job-listing.html">Job Listing</a></li>
+          <li><a href="js-saved-jobs.html">Saved Jobs</a></li>
+          <li>
+            <a href="js-applied-jobs.html" class="active">Applied Jobs</a>
+          </li>
+          <li>
+            <a href="index.html" onclick="localStorage.removeItem('userInfo')"
+              >Log Out</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1>Applied Jobs</h1>
+      <p class="page-description">Track the status of your job applications</p>
+
+      <div id="loadingJobs" class="loading-message">
+        Loading applications...
+      </div>
+
+      <div class="job-list" id="jobList">
+        <!-- Applied jobs will be loaded dynamically -->
+      </div>
+
+      <div id="noJobsMessage" class="no-jobs-message" style="display: none">
+        <p>You haven't applied to any jobs yet.</p>
+        <a href="js-job-listing.html" class="browse-btn">Browse Jobs</a>
+      </div>
+
+      <!-- Resume Modal -->
+      <div id="resumeModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Your Resume</h2>
+          <div id="resumeContent">
+            <!-- Resume content will be displayed here -->
+          </div>
+          <div class="modal-actions">
+            <button id="closeResumeBtn" class="cancel-btn">Close</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Message Modal -->
+      <div id="messageModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Recruiter Message</h2>
+          <div id="messageContent">
+            <!-- Message content will be displayed here -->
+          </div>
+          <div class="modal-actions">
+            <button id="closeMessageBtn" class="cancel-btn">Close</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="mobile-nav.js"></script>
+  </body>
+</html>

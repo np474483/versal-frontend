@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Applications - Job Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="view-applications.css" />
+    <link rel="stylesheet" href="modal.css" />
+    <script src="view-applications.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="#" alt="" />
+          <span>Job Finder</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="recruiter-dashboard.html">Dashboard</a></li>
+          <li><a href="post-job.html">Post Job</a></li>
+          <li><a href="manage-jobs.html">Manage Jobs</a></li>
+          <li>
+            <a href="view-applications.html" class="active">Applications</a>
+          </li>
+          <li><a href="recruiter-profile.html">My Profile</a></li>
+          <li>
+            <a href="index.html" onclick="localStorage.removeItem('userInfo')"
+              >Log Out</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1>Job Applications</h1>
+      <p class="page-description">Review applications for your job postings</p>
+
+      <div class="filter-container">
+        <select id="jobFilter" onchange="filterApplications()">
+          <option value="all">All Jobs</option>
+          <!-- Job options will be loaded dynamically -->
+        </select>
+
+        <select id="statusFilter" onchange="filterApplications()">
+          <option value="all">All Status</option>
+          <option value="new">New</option>
+          <option value="reviewed">Reviewed</option>
+          <option value="shortlisted">Shortlisted</option>
+          <option value="rejected">Rejected</option>
+        </select>
+      </div>
+
+      <div id="loadingApplications" class="loading-message">
+        Loading applications...
+      </div>
+
+      <div class="applications-container" id="applicationsContainer">
+        <!-- Applications will be loaded dynamically -->
+      </div>
+
+      <div
+        id="noApplicationsMessage"
+        class="no-applications-message"
+        style="display: none">
+        <p>No applications found for your job postings.</p>
+        <a href="post-job.html" class="post-job-btn">Post a New Job</a>
+      </div>
+
+      <!-- Applicant Resume Modal -->
+      <div id="resumeModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Applicant Resume</h2>
+          <div id="resumeContent">
+            <!-- Resume content will be displayed here -->
+          </div>
+          <div class="modal-actions">
+            <button id="closeResumeBtn" class="cancel-btn">Close</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feedback Modal -->
+      <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Provide Feedback</h2>
+          <div id="feedbackContent">
+            <form id="feedbackForm">
+              <div class="form-group">
+                <label for="feedbackMessage">Message to Applicant:</label>
+                <textarea
+                  id="feedbackMessage"
+                  rows="5"
+                  placeholder="Enter your feedback or message for the applicant..."></textarea>
+              </div>
+              <div class="modal-actions">
+                <button type="submit" class="submit-btn">Send Feedback</button>
+                <button type="button" id="closeFeedbackBtn" class="cancel-btn">
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="mobile-nav.js"></script>
+  </body>
+</html>

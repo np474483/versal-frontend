@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post a Job - Job Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="post-job.css" />
+    <script src="post-job.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="#" alt="" />
+          <span>Job Finder</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="recruiter-dashboard.html">Dashboard</a></li>
+          <li><a href="post-job.html" class="active">Post Job</a></li>
+          <li><a href="manage-jobs.html">Manage Jobs</a></li>
+          <li><a href="view-applications.html">Applications</a></li>
+          <li><a href="recruiter-profile.html">My Profile</a></li>
+          <li>
+            <a href="index.html" onclick="localStorage.removeItem('userInfo')"
+              >Log Out</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="form-container">
+      <h1 id="page-title">Post a New Job</h1>
+      <p class="form-description" id="page-subtitle">
+        Fill in the details below to create a new job listing
+      </p>
+
+      <form id="jobForm">
+        <div class="form-group">
+          <label for="title">Job Title*</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="e.g. Web Developer"
+            required />
+        </div>
+
+        <div class="form-group">
+          <label for="company">Company Name*</label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            placeholder="Your company name"
+            required />
+        </div>
+
+        <div class="form-group">
+          <label for="category">Job Category*</label>
+          <select id="category" name="category" required>
+            <option value="">Select a category</option>
+            <option value="design">Design</option>
+            <option value="engineering">Engineering</option>
+            <option value="marketing">Marketing</option>
+            <option value="sales">Sales</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="jobType">Job Type*</label>
+          <select id="jobType" name="jobType" required>
+            <option value="">Select job type</option>
+            <option value="full-time">Full-time</option>
+            <option value="part-time">Part-time</option>
+            <option value="contract">Contract</option>
+            <option value="internship">Internship</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="salaryMin">Minimum Salary (₹)*</label>
+            <input
+              type="number"
+              id="salaryMin"
+              name="salaryMin"
+              placeholder="e.g. 30000"
+              required />
+          </div>
+          <div class="form-group">
+            <label for="salaryMax">Maximum Salary (₹)*</label>
+            <input
+              type="number"
+              id="salaryMax"
+              name="salaryMax"
+              placeholder="e.g. 50000"
+              required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location*</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="e.g. Pune, Maharashtra"
+            required />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Job Description*</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="5"
+            placeholder="Describe the job responsibilities and requirements..."
+            required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="requirements">Required Skills (comma separated)*</label>
+          <input
+            type="text"
+            id="requirements"
+            name="requirements"
+            placeholder="e.g. HTML, CSS, JavaScript"
+            required />
+        </div>
+
+        <div class="form-actions">
+          <button type="button" id="cancelButton" class="cancel-btn">
+            Cancel
+          </button>
+          <button type="submit" id="submitButton" class="submit-btn">
+            Post Job
+          </button>
+        </div>
+      </form>
+    </main>
+    <script src="mobile-nav.js"></script>
+  </body>
+</html>

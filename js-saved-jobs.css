@@ -1,0 +1,154 @@
+/* Basic styles for the saved jobs page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #0539a8;
+  margin-bottom: 10px;
+}
+
+.page-description {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Loading message */
+.loading-message {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 18px;
+}
+
+/* Job list */
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.job-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.job-card h3 {
+  margin: 0 0 10px 0;
+  color: #0539a8;
+}
+
+.company-name,
+.job-location,
+.job-type,
+.job-salary,
+.saved-date {
+  margin: 5px 0;
+  color: #666;
+}
+
+.saved-date {
+  font-style: italic;
+  margin-top: 15px;
+}
+
+.job-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.remove-btn,
+.apply-btn,
+.view-details-btn {
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+  text-align: center;
+}
+
+.remove-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.apply-btn {
+  background-color: #0539a8;
+  color: white;
+}
+
+.view-details-btn {
+  background-color: #ff9800;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.remove-btn:hover {
+  background-color: #d32f2f;
+}
+
+.apply-btn:hover {
+  background-color: #042a6d;
+}
+
+.view-details-btn:hover {
+  background-color: #f57c00;
+}
+
+/* No jobs message */
+.no-jobs-message {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.no-jobs-message p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.browse-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0539a8;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.browse-btn:hover {
+  background-color: #042a6d;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .job-list {
+    grid-template-columns: 1fr;
+  }
+
+  .job-actions {
+    flex-direction: column;
+  }
+
+  .remove-btn,
+  .apply-btn,
+  .view-details-btn {
+    width: 100%;
+  }
+}

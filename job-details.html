@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Details - Job Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="job-details.css" />
+    <script src="job-details.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="#" alt="" />
+          <span>Job Finder</span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <!-- Navigation links will be loaded dynamically based on user type -->
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div id="loadingMessage">Loading job details...</div>
+
+      <div id="jobDetailsContainer" style="display: none">
+        <div class="job-header">
+          <h1 id="jobTitle">Job Title</h1>
+          <div class="job-meta">
+            <span id="jobCompany">Company Name</span> •
+            <span id="jobLocation">Location</span> •
+            <span id="jobType">Job Type</span>
+          </div>
+          <div class="posted-date">
+            Posted on: <span id="jobPostedDate">Date</span>
+          </div>
+        </div>
+
+        <div class="job-content">
+          <div class="job-section">
+            <h2>Job Description</h2>
+            <div id="jobDescription"></div>
+          </div>
+
+          <div class="job-section">
+            <h2>Required Skills</h2>
+            <div id="jobRequirements"></div>
+          </div>
+
+          <div class="job-section">
+            <h2>Salary Range</h2>
+            <div id="jobSalary"></div>
+          </div>
+        </div>
+
+        <div class="job-actions" id="jobActions">
+          <!-- Action buttons will be added dynamically based on user type -->
+        </div>
+      </div>
+
+      <div id="errorMessage" style="display: none">
+        <p>Failed to load job details. Please try again later.</p>
+        <button onclick="window.history.back()">Go Back</button>
+      </div>
+    </main>
+  </body>
+</html>

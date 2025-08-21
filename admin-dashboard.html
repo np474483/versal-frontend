@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Job Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="admin-dashboard.css" />
+    <script src="admin-dashboard.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="#" alt="" />
+          <span>Job Finder Admin</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#" class="active">Dashboard</a></li>
+          <li><a href="admin-users.html">Manage Users</a></li>
+          <li><a href="admin-jobs.html">Manage Jobs</a></li>
+          <li>
+            <a href="SignIn.html" onclick="localStorage.removeItem('adminInfo')"
+              >Log Out</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="dashboard-container">
+      <h1>Admin Dashboard</h1>
+      <p class="welcome-text">
+        Welcome to the admin dashboard. Manage users, jobs, and view statistics.
+      </p>
+
+      <div class="stats-container">
+        <div class="stat-box">
+          <h3 id="totalUsers">0</h3>
+          <p>Total Users</p>
+        </div>
+        <div class="stat-box">
+          <h3 id="jobSeekers">0</h3>
+          <p>Job Seekers</p>
+        </div>
+        <div class="stat-box">
+          <h3 id="recruiters">0</h3>
+          <p>Recruiters</p>
+        </div>
+        <div class="stat-box">
+          <h3 id="totalJobs">0</h3>
+          <p>Total Jobs</p>
+        </div>
+        <div class="stat-box">
+          <h3 id="activeJobs">0</h3>
+          <p>Active Jobs</p>
+        </div>
+        <div class="stat-box">
+          <h3 id="totalApplications">0</h3>
+          <p>Total Applications</p>
+        </div>
+      </div>
+
+      <section class="dashboard-section">
+        <h2>Quick Actions</h2>
+        <div class="action-buttons">
+          <a href="admin-users.html" class="action-btn">Manage Users</a>
+          <a href="admin-jobs.html" class="action-btn">Manage Jobs</a>
+        </div>
+      </section>
+
+      <section class="dashboard-section">
+        <h2>Recent Users</h2>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>User Type</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="recentUsersTable">
+              <!-- User data will be loaded here -->
+            </tbody>
+          </table>
+        </div>
+        <div class="view-all-container">
+          <a href="admin-users.html" class="view-all-btn">View All Users</a>
+        </div>
+      </section>
+
+      <section class="dashboard-section">
+        <h2>Recent Jobs</h2>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Company</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="recentJobsTable">
+              <!-- Job data will be loaded here -->
+            </tbody>
+          </table>
+        </div>
+        <div class="view-all-container">
+          <a href="admin-jobs.html" class="view-all-btn">View All Jobs</a>
+        </div>
+      </section>
+    </main>
+    <script src="mobile-nav.js"></script>
+  </body>
+</html>

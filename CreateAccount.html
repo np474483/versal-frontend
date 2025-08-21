@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account - Job Finder</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="CreateAccount.css" />
+    <script src="CreateAccount.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="#" alt="" />
+          <span>Job Finder</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="SignIn.html">SignIn</a></li>
+          <li>
+            <a href="CreateAccount.html" class="active">Create Account</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="contact">
+      <div class="contact-content">
+        <h1>Create Account</h1>
+        <form action="/register" method="POST" onsubmit="return validateForm()">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" required />
+
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="phone">Phone Number:</label>
+          <input type="text" id="phone" name="phone" required />
+
+          <label for="password"
+            >Create Password:(The password contains at least 8
+            characters)</label
+          >
+          <input type="password" id="password" name="password" required />
+
+          <label for="userType">User Type:</label>
+          <select
+            id="userType"
+            name="userType"
+            placeholder="Select THE User Type"
+            required>
+            <option value="job_seeker">Job Seeker</option>
+            <option value="recruiter">Recruiter</option>
+          </select>
+
+          <button type="submit" class="btn primary">Register</button>
+        </form>
+      </div>
+      <div class="contact-image">
+        <img
+          src="images/CreateAccount.jpg"
+          alt="Create Account"
+          class="account-image" />
+      </div>
+    </div>
+    <script src="mobile-nav.js"></script>
+  </body>
+</html>

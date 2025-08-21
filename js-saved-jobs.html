@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saved Jobs - Job Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="js-saved-jobs.css" />
+    <script src="js-saved-jobs.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="#" alt="" />
+          <span>Job Finder</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="job-seeker-dashboard.html">Dashboard</a></li>
+          <li><a href="js-my-profile.html">My Profile</a></li>
+          <li><a href="js-job-listing.html">Job Listing</a></li>
+          <li><a href="js-saved-jobs.html" class="active">Saved Jobs</a></li>
+          <li><a href="js-applied-jobs.html">Applied Jobs</a></li>
+          <li>
+            <a href="index.html" onclick="localStorage.removeItem('userInfo')"
+              >Log Out</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1>Saved Jobs</h1>
+      <p class="page-description">Jobs you've saved for later</p>
+
+      <div id="loadingJobs" class="loading-message">Loading saved jobs...</div>
+
+      <div class="job-list" id="jobList">
+        <!-- Saved jobs will be loaded dynamically -->
+      </div>
+
+      <div id="noJobsMessage" class="no-jobs-message" style="display: none">
+        <p>You haven't saved any jobs yet.</p>
+        <a href="js-job-listing.html" class="browse-btn">Browse Jobs</a>
+      </div>
+    </main>
+    <script src="mobile-nav.js"></script>
+  </body>
+</html>
