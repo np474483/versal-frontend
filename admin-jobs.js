@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function fetchJobs() {
   try {
-    const response = await fetch("http://localhost:3000/api/admin/jobs");
+    const response = await fetch("https://backend-six-theta-v8lgfntgfj.vercel.app/api/admin/jobs");
     const jobs = await response.json();
 
     displayJobs(jobs);
@@ -81,7 +81,7 @@ function formatStatus(status) {
 async function viewJobDetails(jobId) {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/admin/jobs/${jobId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/admin/jobs/${jobId}`
     );
     if (!response.ok) {
       throw new Error("Failed to fetch job details");
@@ -91,7 +91,7 @@ async function viewJobDetails(jobId) {
 
     // Fetch recruiter details
     const recruiterResponse = await fetch(
-      `http://localhost:3000/api/admin/users/${job.recruiterId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/admin/users/${job.recruiterId}`
     );
     let recruiter = { firstName: "Unknown", lastName: "User" };
 
@@ -175,7 +175,7 @@ async function flagJob(jobId, currentStatus) {
   if (confirm(`Are you sure you want to ${action} this job?`)) {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/admin/jobs/${jobId}/flag`,
+        `https://backend-six-theta-v8lgfntgfj.vercel.app/api/admin/jobs/${jobId}/flag`,
         {
           method: "PUT",
           headers: {
@@ -228,7 +228,7 @@ async function deleteJob(jobId) {
   ) {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/admin/jobs/${jobId}`,
+        `https://backend-six-theta-v8lgfntgfj.vercel.app/api/admin/jobs/${jobId}`,
         {
           method: "DELETE",
         }

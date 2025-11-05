@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function fetchUsers() {
   try {
-    const response = await fetch("http://localhost:3000/api/admin/users");
+    const response = await fetch("https://backend-six-theta-v8lgfntgfj.vercel.app/api/admin/users");
     const users = await response.json();
 
     displayUsers(users);
@@ -94,7 +94,7 @@ async function viewUserProfile(userId, userType) {
 
     // Fetch basic user data
     const userResponse = await fetch(
-      `http://localhost:3000/api/admin/users/${userId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/admin/users/${userId}`
     );
     if (!userResponse.ok) {
       throw new Error("Failed to fetch user data");
@@ -104,7 +104,7 @@ async function viewUserProfile(userId, userType) {
     // Fetch additional profile data based on user type
     if (userType === "job_seeker") {
       const profileResponse = await fetch(
-        `http://localhost:3000/api/job-seekers/profile/${userId}`
+        `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/profile/${userId}`
       );
       if (profileResponse.ok) {
         const jobSeekerProfile = await profileResponse.json();
@@ -112,7 +112,7 @@ async function viewUserProfile(userId, userType) {
 
         // Fetch education
         const educationResponse = await fetch(
-          `http://localhost:3000/api/job-seekers/education/${userId}`
+          `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/education/${userId}`
         );
         if (educationResponse.ok) {
           profileData.education = await educationResponse.json();
@@ -120,7 +120,7 @@ async function viewUserProfile(userId, userType) {
 
         // Fetch experience
         const experienceResponse = await fetch(
-          `http://localhost:3000/api/job-seekers/experience/${userId}`
+          `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/experience/${userId}`
         );
         if (experienceResponse.ok) {
           profileData.experience = await experienceResponse.json();
@@ -128,7 +128,7 @@ async function viewUserProfile(userId, userType) {
       }
     } else if (userType === "recruiter") {
       const profileResponse = await fetch(
-        `http://localhost:3000/api/recruiters/profile/${userId}`
+        `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/profile/${userId}`
       );
       if (profileResponse.ok) {
         const recruiterProfile = await profileResponse.json();
@@ -136,7 +136,7 @@ async function viewUserProfile(userId, userType) {
 
         // Fetch jobs posted by this recruiter
         const jobsResponse = await fetch(
-          `http://localhost:3000/api/recruiters/jobs/${userId}`
+          `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/jobs/${userId}`
         );
         if (jobsResponse.ok) {
           profileData.jobs = await jobsResponse.json();
@@ -361,7 +361,7 @@ async function deactivateUser(userId, currentStatus) {
   if (confirm(`Are you sure you want to ${action} this user account?`)) {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/admin/users/${userId}/status`,
+        `https://backend-six-theta-v8lgfntgfj.vercel.app/api/admin/users/${userId}/status`,
         {
           method: "PUT",
           headers: {
@@ -410,7 +410,7 @@ async function deleteUser(userId) {
   ) {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/admin/users/${userId}`,
+        `https://backend-six-theta-v8lgfntgfj.vercel.app/api/admin/users/${userId}`,
         {
           method: "DELETE",
         }

@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function fetchDashboardStats(recruiterId) {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/recruiters/stats/${recruiterId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/stats/${recruiterId}`
     );
     if (!response.ok) {
       throw new Error("Failed to fetch stats");
@@ -49,7 +49,7 @@ async function fetchDashboardStats(recruiterId) {
 async function fetchRecentJobs(recruiterId) {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/recruiters/jobs/${recruiterId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/jobs/${recruiterId}`
     );
     if (!response.ok) {
       throw new Error("Failed to fetch jobs");
@@ -112,7 +112,7 @@ async function confirmDelete(jobId) {
   if (confirm("Are you sure you want to delete this job posting?")) {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/recruiters/jobs/${jobId}`,
+        `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/jobs/${jobId}`,
         {
           method: "DELETE",
         }

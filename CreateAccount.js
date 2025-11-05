@@ -53,7 +53,7 @@ async function registerUser(
     submitButton.disabled = true;
 
     // Send data to backend
-    const response = await fetch("http://localhost:3000/api/users/register", {
+    const response = await fetch("https://backend-six-theta-v8lgfntgfj.vercel.app/api/users/register", {
       method: "post",
       headers: {
         "Content-Type": "application/json",

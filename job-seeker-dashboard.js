@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function fetchRecommendedJobs() {
   try {
-    const response = await fetch("http://localhost:3000/api/job-seekers/jobs");
+    const response = await fetch("https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/jobs");
     if (!response.ok) {
       throw new Error("Failed to fetch jobs");
     }
@@ -82,13 +82,13 @@ async function fetchUserStats(userId) {
   try {
     // Fetch applied jobs count
     const appliedResponse = await fetch(
-      `http://localhost:3000/api/job-seekers/applications/${userId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/applications/${userId}`
     );
     const appliedJobs = await appliedResponse.json();
 
     // Fetch saved jobs count
     const savedResponse = await fetch(
-      `http://localhost:3000/api/job-seekers/saved-jobs/${userId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/saved-jobs/${userId}`
     );
     const savedJobs = await savedResponse.json();
 
@@ -120,7 +120,7 @@ async function saveJob(jobId, button) {
     if (button.classList.contains("saved")) {
       // Unsave job
       const response = await fetch(
-        `http://localhost:3000/api/job-seekers/unsave-job/${jobId}/${userInfo.userId}`,
+        `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/unsave-job/${jobId}/${userInfo.userId}`,
         {
           method: "DELETE",
         }
@@ -142,7 +142,7 @@ async function saveJob(jobId, button) {
     } else {
       // Save job
       const response = await fetch(
-        "http://localhost:3000/api/job-seekers/save-job",
+        "https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/save-job",
         {
           method: "POST",
           headers: {
@@ -183,7 +183,7 @@ async function checkSavedJobs() {
 
   try {
     const response = await fetch(
-      `http://localhost:3000/api/job-seekers/saved-jobs/${userInfo.userId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/saved-jobs/${userInfo.userId}`
     );
     const savedJobs = await response.json();
 

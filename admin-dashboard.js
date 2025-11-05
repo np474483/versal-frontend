@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function fetchDashboardStats() {
   try {
-    const response = await fetch("http://localhost:3000/api/admin/stats");
+    const response = await fetch("https://backend-six-theta-v8lgfntgfj.vercel.app/api/admin/stats");
     const data = await response.json();
 
     // Update stats on the page
@@ -38,7 +38,7 @@ async function fetchDashboardStats() {
 
 async function fetchRecentUsers() {
   try {
-    const response = await fetch("http://localhost:3000/api/admin/users");
+    const response = await fetch("https://backend-six-theta-v8lgfntgfj.vercel.app/api/admin/users");
     const users = await response.json();
 
     const recentUsersTable = document.getElementById("recentUsersTable");
@@ -68,7 +68,7 @@ async function fetchRecentUsers() {
 
 async function fetchRecentJobs() {
   try {
-    const response = await fetch("http://localhost:3000/api/admin/jobs");
+    const response = await fetch("https://backend-six-theta-v8lgfntgfj.vercel.app/api/admin/jobs");
     const jobs = await response.json();
 
     const recentJobsTable = document.getElementById("recentJobsTable");

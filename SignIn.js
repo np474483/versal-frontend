@@ -27,7 +27,7 @@ async function loginUser(email, password) {
     submitButton.disabled = true;
 
     // Send data to backend
-    const response = await fetch("http://localhost:3000/api/users/login", {
+    const response = await fetch("https://backend-six-theta-v8lgfntgfj.vercel.app/api/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

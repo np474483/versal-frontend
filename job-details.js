@@ -49,7 +49,7 @@ function setupNavigation() {
 
 async function loadJobDetails(jobId) {
   try {
-    const response = await fetch(`http://localhost:3000/api/jobs/${jobId}`);
+    const response = await fetch(`https://backend-six-theta-v8lgfntgfj.vercel.app/api/jobs/${jobId}`);
 
     if (!response.ok) {
       throw new Error("Failed to fetch job details");
@@ -127,7 +127,7 @@ async function checkIfJobIsSaved(jobId) {
 
   try {
     const response = await fetch(
-      `http://localhost:3000/api/job-seekers/saved-jobs/${userInfo.userId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/saved-jobs/${userInfo.userId}`
     );
     if (!response.ok) return;
 
@@ -152,7 +152,7 @@ async function checkIfAlreadyApplied(jobId) {
 
   try {
     const response = await fetch(
-      `http://localhost:3000/api/job-seekers/applications/${userInfo.userId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/applications/${userInfo.userId}`
     );
     if (!response.ok) return;
 
@@ -187,7 +187,7 @@ async function saveJob(jobId) {
     // Unsave job
     try {
       const response = await fetch(
-        `http://localhost:3000/api/job-seekers/unsave-job/${jobId}/${userInfo.userId}`,
+        `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/unsave-job/${jobId}/${userInfo.userId}`,
         {
           method: "DELETE",
         }
@@ -208,7 +208,7 @@ async function saveJob(jobId) {
     // Save job
     try {
       const response = await fetch(
-        "http://localhost:3000/api/job-seekers/save-job",
+        "https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/save-job",
         {
           method: "POST",
           headers: {
@@ -247,7 +247,7 @@ async function applyForJob(jobId, recruiterId) {
   try {
     // First, check if the job seeker has completed their profile
     const profileResponse = await fetch(
-      `http://localhost:3000/api/job-seekers/profile/${userInfo.userId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/profile/${userInfo.userId}`
     );
 
     if (!profileResponse.ok) {
@@ -278,7 +278,7 @@ async function applyForJob(jobId, recruiterId) {
     }
 
     // Fetch job details to get the correct recruiterId
-    const jobResponse = await fetch(`http://localhost:3000/api/jobs/${jobId}`);
+    const jobResponse = await fetch(`https://backend-six-theta-v8lgfntgfj.vercel.app/api/jobs/${jobId}`);
     if (!jobResponse.ok) {
       throw new Error("Failed to fetch job details");
     }
@@ -303,7 +303,7 @@ async function applyForJob(jobId, recruiterId) {
     console.log("Sending application data:", applicationData);
 
     const response = await fetch(
-      "http://localhost:3000/api/job-seekers/apply",
+      "https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/apply",
       {
         method: "POST",
         headers: {
@@ -340,7 +340,7 @@ async function deleteJob(jobId) {
   if (confirm("Are you sure you want to delete this job posting?")) {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/recruiters/jobs/${jobId}`,
+        `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/jobs/${jobId}`,
         {
           method: "DELETE",
         }

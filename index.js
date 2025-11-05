@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function fetchRecentJobs() {
   try {
-    const response = await fetch("http://localhost:3000/api/jobs/recent");
+    const response = await fetch("https://backend-six-theta-v8lgfntgfj.vercel.app/api/jobs/recent");
 
     if (!response.ok) {
       throw new Error("Failed to fetch recent jobs");

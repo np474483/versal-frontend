@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (editJobId) {
           response = await fetch(
-            `http://localhost:3000/api/recruiters/jobs/${editJobId}`,
+            `https://backend-six-theta-v8lgfntgfj.vercel.app/recruiters/jobs/${editJobId}`,
             {
               method: "PUT",
               headers: {
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           );
         } else {
-          response = await fetch("http://localhost:3000/api/recruiters/jobs", {
+          response = await fetch("https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/jobs", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function loadCompanyInfo(userId) {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/recruiters/profile/${userId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/profile/${userId}`
     );
 
     if (response.status === 404) {
@@ -133,7 +133,7 @@ async function loadCompanyInfo(userId) {
 async function loadJobData(jobId) {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/recruiters/jobs/${jobId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/jobs/${jobId}`
     );
 
     if (!response.ok) {

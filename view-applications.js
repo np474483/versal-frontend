@@ -91,7 +91,7 @@ async function fetchApplicationsForJob(jobId) {
     document.getElementById("applicationsContainer").style.display = "none";
 
     // Fetch job details to display job title
-    const jobResponse = await fetch(`http://localhost:3000/api/jobs/${jobId}`);
+    const jobResponse = await fetch(`https://backend-six-theta-v8lgfntgfj.vercel.app/api/jobs/${jobId}`);
 
     if (!jobResponse.ok) {
       throw new Error("Failed to fetch job details");
@@ -104,7 +104,7 @@ async function fetchApplicationsForJob(jobId) {
 
     // Fetch applications for this job
     const applicationsResponse = await fetch(
-      `http://localhost:3000/api/recruiters/applications/job/${jobId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/applications/job/${jobId}`
     );
 
     // Hide loading message
@@ -140,7 +140,7 @@ async function fetchAllApplications(recruiterId) {
 
     // Fetch all applications for this recruiter
     const response = await fetch(
-      `http://localhost:3000/api/recruiters/applications/${recruiterId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/applications/${recruiterId}`
     );
 
     // Hide loading message
@@ -154,7 +154,7 @@ async function fetchAllApplications(recruiterId) {
 
     // Fetch all jobs posted by this recruiter for the filter dropdown
     const jobsResponse = await fetch(
-      `http://localhost:3000/api/recruiters/jobs/${recruiterId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/jobs/${recruiterId}`
     );
 
     if (!jobsResponse.ok) {
@@ -299,7 +299,7 @@ async function viewResume(applicationId, jobSeekerId) {
 
     // Fetch job seeker profile
     const response = await fetch(
-      `http://localhost:3000/api/job-seekers/profile/${seekerId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/profile/${seekerId}`
     );
 
     if (!response.ok) {
@@ -310,7 +310,7 @@ async function viewResume(applicationId, jobSeekerId) {
 
     // Fetch education information
     const educationResponse = await fetch(
-      `http://localhost:3000/api/job-seekers/education/${seekerId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/education/${seekerId}`
     );
     let education = [];
 
@@ -320,7 +320,7 @@ async function viewResume(applicationId, jobSeekerId) {
 
     // Fetch experience information
     const experienceResponse = await fetch(
-      `http://localhost:3000/api/job-seekers/experience/${seekerId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/experience/${seekerId}`
     );
     let experience = [];
 
@@ -436,7 +436,7 @@ function provideFeedback(applicationId) {
 async function sendFeedback(applicationId, feedback) {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/recruiters/applications/${applicationId}/feedback`,
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/applications/${applicationId}/feedback`,
       {
         method: "POST",
         headers: {
@@ -464,7 +464,7 @@ async function sendFeedback(applicationId, feedback) {
 async function updateStatus(applicationId, status, button) {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/recruiters/applications/${applicationId}`,
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/applications/${applicationId}`,
       {
         method: "PUT",
         headers: {

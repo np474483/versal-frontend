@@ -338,7 +338,7 @@ async function fetchUserProfile(userId) {
   try {
     // Fetch personal info
     const response = await fetch(
-      `http://localhost:3000/api/job-seekers/profile/${userId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/profile/${userId}`
     );
 
     if (response.ok) {
@@ -380,7 +380,7 @@ async function fetchUserProfile(userId) {
 
     // Fetch education items
     const educationResponse = await fetch(
-      `http://localhost:3000/api/job-seekers/education/${userId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/education/${userId}`
     );
 
     if (educationResponse.ok) {
@@ -390,7 +390,7 @@ async function fetchUserProfile(userId) {
 
     // Fetch experience items
     const experienceResponse = await fetch(
-      `http://localhost:3000/api/job-seekers/experience/${userId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/experience/${userId}`
     );
 
     if (experienceResponse.ok) {
@@ -407,7 +407,7 @@ async function fetchUserProfile(userId) {
 async function savePersonalInfo(userData) {
   try {
     const response = await fetch(
-      "http://localhost:3000/api/job-seekers/profile",
+      "https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/profile",
       {
         method: "POST",
         headers: {
@@ -449,7 +449,7 @@ async function savePersonalInfo(userData) {
 async function saveProfessionalInfo(professionalData) {
   try {
     const response = await fetch(
-      "http://localhost:3000/api/job-seekers/professional",
+      "https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/professional",
       {
         method: "POST",
         headers: {
@@ -486,7 +486,7 @@ async function saveProfessionalInfo(professionalData) {
 async function saveEducation(educationData) {
   try {
     const response = await fetch(
-      "http://localhost:3000/api/job-seekers/education",
+      "https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/education",
       {
         method: "POST",
         headers: {
@@ -529,7 +529,7 @@ async function saveEducation(educationData) {
 async function saveExperience(experienceData) {
   try {
     const response = await fetch(
-      "http://localhost:3000/api/job-seekers/experience",
+      "https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/experience",
       {
         method: "POST",
         headers: {
@@ -575,7 +575,7 @@ async function saveExperience(experienceData) {
 async function saveResume(userId, fileName) {
   try {
     const response = await fetch(
-      "http://localhost:3000/api/job-seekers/resume",
+      "https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/resume",
       {
         method: "POST",
         headers: {
@@ -601,7 +601,7 @@ async function saveResume(userId, fileName) {
 async function saveProfileImage(userId, imageData) {
   try {
     const response = await fetch(
-      "http://localhost:3000/api/job-seekers/profile-image",
+      "https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/profile-image",
       {
         method: "POST",
         headers: {
@@ -626,7 +626,7 @@ async function saveProfileImage(userId, imageData) {
 async function deleteItem(itemType, itemId) {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/job-seekers/${itemType}/${itemId}`,
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/${itemType}/${itemId}`,
       {
         method: "DELETE",
       }

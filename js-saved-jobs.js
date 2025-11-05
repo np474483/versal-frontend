@@ -16,7 +16,7 @@ async function fetchSavedJobs(userId) {
     loadingElement.style.display = "block";
 
     const response = await fetch(
-      `http://localhost:3000/api/job-seekers/saved-jobs/${userId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/saved-jobs/${userId}`
     );
 
     loadingElement.style.display = "none";
@@ -88,7 +88,7 @@ async function removeJob(jobId, button) {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/job-seekers/unsave-job/${jobId}/${userInfo.userId}`,
+        `https://backend-six-theta-v8lgfntgfj.vercel.app/api/job-seekers/unsave-job/${jobId}/${userInfo.userId}`,
         {
           method: "DELETE",
         }

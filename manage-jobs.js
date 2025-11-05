@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function fetchJobs(recruiterId) {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/recruiters/jobs/${recruiterId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/jobs/${recruiterId}`
     );
 
     if (!response.ok) {
@@ -99,7 +99,7 @@ async function confirmDelete(jobId) {
   if (confirm("Are you sure you want to delete this job posting?")) {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/recruiters/jobs/${jobId}`,
+        `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/jobs/${jobId}`,
         {
           method: "DELETE",
         }

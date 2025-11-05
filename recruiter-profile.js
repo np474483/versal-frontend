@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         const response = await fetch(
-          "http://localhost:3000/api/recruiters/profile",
+          "https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/profile",
           {
             method: "POST",
             headers: {
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function loadCompanyProfile(userId) {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/recruiters/profile/${userId}`
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/profile/${userId}`
     );
 
     if (response.status === 404) {
@@ -136,7 +136,7 @@ async function loadCompanyProfile(userId) {
 async function uploadLogo(userId, logoDataUrl) {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/recruiters/profile/logo/${userId}`,
+      `https://backend-six-theta-v8lgfntgfj.vercel.app/api/recruiters/profile/logo/${userId}`,
       {
         method: "POST",
         headers: {
